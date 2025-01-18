@@ -2,19 +2,18 @@ package SelectionSort;
 
 public class SelectionSort {
     public static int[] selectionSort(int[] arr) {
-        for(int i = 0; i < arr.length; i++) {
-            int menor = Integer.MAX_VALUE;
-            int menorIndex = 0;
+        for(int i = 0; i < arr.length - 1; i++) {
+            int menorIndex = i;
 
-            for (int j = i; j < arr.length; j++) {
-                if (arr[j] < menor) {
-                    menor = arr[j];
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[menorIndex]) {
                     menorIndex = j;
                 }
             }
 
-            arr[menorIndex] = arr[i];
-            arr[i] = menor;
+            int temp = arr[i];
+            arr[i] = arr[menorIndex];
+            arr[menorIndex] = temp;
         }
         return arr;
     }
