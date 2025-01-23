@@ -1,4 +1,4 @@
-package BinarySearch;
+package Search.BinarySearch;
 
 public class BinarySearch {
     public static int recursiveBinarySearch(int[] sortedArray, int start, int end, int numberToFind) {

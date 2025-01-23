@@ -1,4 +1,4 @@
-package HonersRule;
+package Polynomial.HonersRule;
 
 public class HonersRule {
     public static int honersRule(int[] arr, int length, int x) {

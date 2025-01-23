@@ -3,7 +3,7 @@ import java.util.Arrays;
 import InsertionSort.InsertionSort;
 import SelectionSort.SelectionSort;
 import MergeSort.MergeSort;
-import BinarySearch.BinarySearch;
+import Search.BinarySearch.BinarySearch;
 
 public class Main {
     public static void main(String[] args) {
