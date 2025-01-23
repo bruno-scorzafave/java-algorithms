@@ -9,11 +9,11 @@ import InsertionSort.InsertionSort;
 public class BasicTests {
     @Test
     public void insertionSort() {
-        InsertionSort insertionSort = new InsertionSort();
-        int[] sortedArray = insertionSort.insertionSort(new int[] {3, 2, 1}, 3);
+        int[] arr = new int[] {3, 2, 1};
+        InsertionSort.insertionSort(arr, arr.length);
         int[] expectedResult = new int [] {1, 2, 3};
 
-        Assertions.assertEquals(Arrays.toString(expectedResult), Arrays.toString(sortedArray));
+        Assertions.assertEquals(Arrays.toString(expectedResult), Arrays.toString(arr));
 
     }
 }
