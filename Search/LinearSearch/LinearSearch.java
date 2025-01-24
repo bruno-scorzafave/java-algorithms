@@ -10,4 +10,14 @@ public class LinearSearch {
         }
         return numberIndex;
     }
+
+    public static int recursiveLinearSearch(int[] arr, int start, int end, int numberToFind) {
+        if (end < start) {
+            return -1;
+        }
+        if (arr[end - 1] == numberToFind) {
+            return end - 1;
+        }
+        return recursiveLinearSearch(arr, start, end - 1, numberToFind);
+    }
 }

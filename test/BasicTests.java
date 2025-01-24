@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 
 import InsertionSort.InsertionSort;
+import Search.LinearSearch.LinearSearch;
 
 public class BasicTests {
     @Test
@@ -14,6 +15,13 @@ public class BasicTests {
         int[] expectedResult = new int [] {1, 2, 3};
 
         Assertions.assertEquals(Arrays.toString(expectedResult), Arrays.toString(arr));
+    }
 
+    @Test
+    public void recursiveLinearSearch() {
+        int[] arr = new int[] {1, 4, 2, 7};
+        int numberToFind = 7;
+
+        Assertions.assertEquals(3, LinearSearch.recursiveLinearSearch(arr, 0, arr.length, numberToFind));
     }
 }
