@@ -2,7 +2,7 @@ package Heap;
 
 public abstract class Heap {
     protected int size;
-    protected int[] heap;
+    public int[] heap;
 
     public void swap(int firstNode, int secondNode) {
         int tmp = heap[firstNode];

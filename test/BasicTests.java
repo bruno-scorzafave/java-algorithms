@@ -2,6 +2,11 @@ package test;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import Heap.HeapSort;
+import Heap.MaxHeap;
+import Heap.MinHeap;
+
 import java.util.Arrays;
 
 import InsertionSort.InsertionSort;
@@ -36,5 +41,55 @@ public class BasicTests {
         int[][] expectedMatrix = { { 36, 49 }, { 23, 35 } };
 
         Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(SquareMatrixMultiply.squareMatrixMultiply(matrix1, matriz2, matrixOfZeros, 2)));
+    }
+
+    @Test
+    public void maxHeap() {
+        int[] arr = new int[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
+        MaxHeap maxHeap = new MaxHeap(10, arr);
+        maxHeap.buildMaxHeap();
+
+        int[] expectedArray = { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 };
+
+        Assertions.assertEquals(Arrays.toString(expectedArray), Arrays.toString(maxHeap.heap));
+    }
+
+    @Test
+    public void minHeap() {
+        int[] arr = new int[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
+        MinHeap minHeap = new MinHeap(10, arr);
+        minHeap.buildMinHeap();
+
+        int[] expectedArray = { 1, 2, 3, 4, 7, 9, 10, 14, 8, 16 };
+
+        Assertions.assertEquals(Arrays.toString(expectedArray), Arrays.toString(minHeap.heap));
+    }
+
+    @Test
+    public void maxHeapSort() {
+        int[] arr = new int[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
+        MaxHeap maxHeap = new MaxHeap(10, arr);
+        maxHeap.buildMaxHeap();
+
+        HeapSort heapSort = new HeapSort();
+        heapSort.heapSort(maxHeap);
+
+        int[] expectedArray = { 1, 2, 3, 4, 7, 8, 9, 10, 14, 16 };
+
+        Assertions.assertEquals(Arrays.toString(expectedArray), Arrays.toString(maxHeap.heap));
+    }
+
+    @Test
+    public void minHeapSort() {
+        int[] arr = new int[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
+        MinHeap minHeap = new MinHeap(10, arr);
+        minHeap.buildMinHeap();
+
+        HeapSort heapSort = new HeapSort();
+        heapSort.heapSort(minHeap);
+
+        int[] expectedArray = { 16, 14, 10, 9, 8, 7, 4, 3, 2, 1 };
+
+        Assertions.assertEquals(Arrays.toString(expectedArray), Arrays.toString(minHeap.heap));
     }
 }
