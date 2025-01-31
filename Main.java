@@ -4,18 +4,16 @@ import InsertionSort.InsertionSort;
 import SelectionSort.SelectionSort;
 import MergeSort.MergeSort;
 import Search.BinarySearch.BinarySearch;
+import Heap.MaxHeap;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = new int[] {5, 2, 4, 8, 6, 1, 3, 7, 10, 9};
+        int[] arr = new int[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
         System.out.println("Initial array: " + Arrays.toString(arr));
 
-        MergeSort.sort(arr, 0, arr.length - 1);
-        System.out.println("Sorted array: " + Arrays.toString(arr));
+        MaxHeap maxHeap = new MaxHeap(arr.length, arr);
+        maxHeap.buildMaxHeap();;
 
-        int numberToFind = 4;
-        int index = BinarySearch.interativeBinarySearch(arr, 0, arr.length - 1, numberToFind);
-        System.out.println("Index of the number: " + numberToFind + " is " + index);
-
+        System.out.println("Max Heap : " + maxHeap.toString());
     }
 }
