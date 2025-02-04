@@ -25,4 +25,18 @@ public class MinHeap extends Heap {
             heapify(smallest);
         }
     }
+
+    public int minHeapMinimum() {
+        return heap[0];
+    }
+
+    public int minHeapExtractMinimum() {
+        int min = minHeapMinimum();
+        
+        heap[0] = heap[size - 1];
+        decreaseHeapSize();
+        heapify(0);
+
+        return min;
+    }
 }

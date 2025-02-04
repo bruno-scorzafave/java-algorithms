@@ -25,4 +25,18 @@ public class MaxHeap extends Heap {
             heapify(largest);
         }
     }
+
+    public int maxHeapMaximum() {
+        return heap[0];
+    }
+
+    public int maxHeapExtractMax() {
+        int max = maxHeapMaximum();
+        
+        heap[0] = heap[size - 1];
+        decreaseHeapSize();
+        heapify(0);
+
+        return max;
+    }
 }

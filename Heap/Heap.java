@@ -24,5 +24,16 @@ public abstract class Heap {
         }
     }
 
+    public void decreaseHeapSize() {
+        size--;
+        int[] newArray = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            newArray[i] = heap[i];
+        }
+
+        heap = newArray;
+    }
+
     public abstract void heapify(int index);
 }
