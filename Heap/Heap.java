@@ -18,5 +18,11 @@ public abstract class Heap {
         return (2*i) + 1;
     }
 
+    public void buildHeap() {
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            heapify(i);
+        }
+    }
+
     public abstract void heapify(int index);
 }

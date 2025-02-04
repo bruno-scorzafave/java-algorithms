@@ -47,7 +47,7 @@ public class BasicTests {
     public void maxHeap() {
         int[] arr = new int[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
         MaxHeap maxHeap = new MaxHeap(10, arr);
-        maxHeap.buildMaxHeap();
+        maxHeap.buildHeap();
 
         int[] expectedArray = { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 };
 
@@ -58,7 +58,7 @@ public class BasicTests {
     public void minHeap() {
         int[] arr = new int[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
         MinHeap minHeap = new MinHeap(10, arr);
-        minHeap.buildMinHeap();
+        minHeap.buildHeap();
 
         int[] expectedArray = { 1, 2, 3, 4, 7, 9, 10, 14, 8, 16 };
 
@@ -69,7 +69,7 @@ public class BasicTests {
     public void maxHeapSort() {
         int[] arr = new int[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
         MaxHeap maxHeap = new MaxHeap(10, arr);
-        maxHeap.buildMaxHeap();
+        maxHeap.buildHeap();
 
         HeapSort heapSort = new HeapSort();
         heapSort.heapSort(maxHeap);
@@ -83,7 +83,7 @@ public class BasicTests {
     public void minHeapSort() {
         int[] arr = new int[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
         MinHeap minHeap = new MinHeap(10, arr);
-        minHeap.buildMinHeap();
+        minHeap.buildHeap();
 
         HeapSort heapSort = new HeapSort();
         heapSort.heapSort(minHeap);

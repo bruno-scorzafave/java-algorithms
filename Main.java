@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Initial array: " + Arrays.toString(arr));
 
         MaxHeap maxHeap = new MaxHeap(arr.length, arr);
-        maxHeap.buildMaxHeap();
+        maxHeap.buildHeap();
 
         System.out.println("Max Heap : " + Arrays.toString(arr));
 
@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Max Heap Sorted : " + Arrays.toString(arr));
 
         MinHeap minHeap = new MinHeap(arr.length, arr);
-        minHeap.buildMinHeap();
+        minHeap.buildHeap();
 
         System.out.println("Min Heap : " + Arrays.toString(arr));
 

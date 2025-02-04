@@ -25,10 +25,4 @@ public class MinHeap extends Heap {
             heapify(smallest);
         }
     }
-
-    public void buildMinHeap() {
-        for (int i = size / 2 - 1; i >= 0; i--) {
-            heapify(i);
-        }
-    }
 }
