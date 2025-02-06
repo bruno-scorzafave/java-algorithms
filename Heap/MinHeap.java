@@ -2,8 +2,7 @@ package Heap;
 
 public class MinHeap extends Heap {
     public MinHeap(int maxSize, int[] arr) {
-        this.size = maxSize;
-        this.heap = arr;
+        super(maxSize, arr);
     }
 
     @Override
@@ -23,6 +22,25 @@ public class MinHeap extends Heap {
         if (smallest != index) {
             swap(index, smallest);
             heapify(smallest);
+        }
+    }
+
+    @Override
+    public void insert(int value) {
+        increaseHeapSize();
+        heap[size - 1] = value;
+        heapifyUp(size - 1);
+    }
+
+    @Override
+    public void heapifyUp(int index) {
+        int parentIndex = parent(index); // Get the parent index
+        while (index > 0 && heap[index] < heap[parentIndex]) {
+            // Swap the current node with its parent
+            swap(index, parentIndex);
+            // Move up to the parent
+            index = parentIndex;
+            parentIndex = parent(index);
         }
     }
 
