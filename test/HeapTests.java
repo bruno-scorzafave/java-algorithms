@@ -15,7 +15,6 @@ public class HeapTests {
     @Test
     public void maxHeap() {
         MaxHeap maxHeap = new MaxHeap(10, arr);
-        maxHeap.buildHeap();
 
         int[] expectedArray = { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 };
 
@@ -25,7 +24,6 @@ public class HeapTests {
     @Test
     public void minHeap() {
         MinHeap minHeap = new MinHeap(10, arr);
-        minHeap.buildHeap();
 
         int[] expectedArray = { 1, 2, 3, 4, 7, 9, 10, 14, 8, 16 };
 
@@ -35,7 +33,6 @@ public class HeapTests {
     @Test
     public void maxHeapSort() {
         MaxHeap maxHeap = new MaxHeap(10, arr);
-        maxHeap.buildHeap();
 
         HeapSort heapSort = new HeapSort();
         heapSort.heapSort(maxHeap);
@@ -48,7 +45,6 @@ public class HeapTests {
     @Test
     public void minHeapSort() {
         MinHeap minHeap = new MinHeap(10, arr);
-        minHeap.buildHeap();
 
         HeapSort heapSort = new HeapSort();
         heapSort.heapSort(minHeap);
@@ -61,7 +57,6 @@ public class HeapTests {
     @Test
     public void maxHeapExtractMax() {
         MaxHeap maxHeap = new MaxHeap(10, arr);
-        maxHeap.buildHeap();
         maxHeap.maxHeapExtractMax();
 
         int[] expectedArray = { 14, 8, 10, 4, 7, 9, 3, 2, 1 };
@@ -73,7 +68,6 @@ public class HeapTests {
     @Test
     public void minHeapExtractMinimum() {
         MinHeap minHeap = new MinHeap(10, arr);
-        minHeap.buildHeap();
         minHeap.minHeapExtractMinimum();
 
         int[] expectedArray = { 2, 4, 3, 8, 7, 9, 10, 14, 16 };
@@ -84,7 +78,6 @@ public class HeapTests {
     @Test
     public void maxHeapMaximum() {
         MaxHeap maxHeap = new MaxHeap(10, arr);
-        maxHeap.buildHeap();
         int maximumValue = maxHeap.maxHeapMaximum();
 
         Assertions.assertEquals(16, maximumValue);
@@ -93,9 +86,29 @@ public class HeapTests {
     @Test
     public void minHeapMinimum() {
         MinHeap minHeap = new MinHeap(10, arr);
-        minHeap.buildHeap();
         int minimumValue = minHeap.minHeapMinimum();
 
         Assertions.assertEquals(1, minimumValue);
     }
+
+    @Test
+    public void maxHeapInsert() {
+        MaxHeap maxHeap = new MaxHeap(10, arr);
+        maxHeap.insert(15);
+
+        int[] expectedArray = { 16, 15, 10, 8, 14, 9, 3, 2, 4, 1, 7 };
+
+        Assertions.assertEquals(Arrays.toString(expectedArray), Arrays.toString(maxHeap.heap));
+    }
+
+    @Test
+    public void minHeapInsert() {
+        MinHeap minHeap = new MinHeap(10, arr);
+        minHeap.insert(6);
+
+        int[] expectedArray = { 1, 2, 3, 4, 6, 9, 10, 14, 8, 16, 7 };
+
+        Assertions.assertEquals(Arrays.toString(expectedArray), Arrays.toString(minHeap.heap));
+    }
+
 }
