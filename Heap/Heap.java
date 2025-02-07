@@ -1,7 +1,7 @@
 package Heap;
 
 public abstract class Heap {
-    protected int size;
+    public int size;
     public int[] heap;
 
     public Heap(int maxSize, int[] arr) {

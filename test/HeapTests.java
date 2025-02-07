@@ -5,9 +5,9 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import Heap.HeapSort;
 import Heap.MaxHeap;
 import Heap.MinHeap;
+import HeapSort.HeapSort;
 
 public class HeapTests {
     public int[] arr = { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };

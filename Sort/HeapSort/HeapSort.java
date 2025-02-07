@@ -1,4 +1,6 @@
-package Heap;
+package HeapSort;
+
+import Heap.Heap;
 
 public class HeapSort {
     public void heapSort(Heap heap) {

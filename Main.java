@@ -4,9 +4,9 @@ import InsertionSort.InsertionSort;
 import SelectionSort.SelectionSort;
 import MergeSort.MergeSort;
 import Search.BinarySearch.BinarySearch;
-import Heap.HeapSort;
 import Heap.MaxHeap;
 import Heap.MinHeap;
+import HeapSort.HeapSort;
 
 public class Main {
     public static void main(String[] args) {
