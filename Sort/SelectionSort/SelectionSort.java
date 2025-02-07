@@ -1,7 +1,7 @@
 package SelectionSort;
 
 public class SelectionSort {
-    public static int[] selectionSort(int[] arr) {
+    public static void selectionSort(int[] arr) {
         for(int i = 0; i < arr.length - 1; i++) {
             int menorIndex = i;
 
@@ -15,6 +15,5 @@ public class SelectionSort {
             arr[i] = arr[menorIndex];
             arr[menorIndex] = temp;
         }
-        return arr;
     }
 }

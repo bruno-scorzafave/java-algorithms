@@ -1,7 +1,7 @@
 package InsertionSort;
 
 public class InsertionSort {
-    public static int[] insertionSort(int[] arr, int length) {
+    public static void insertionSort(int[] arr, int length) {
 
         for (int i = 1; i < length; i++) {
             int key = arr[i];
@@ -14,6 +14,5 @@ public class InsertionSort {
 
             arr[j + 1] = key;
         }
-        return arr;
     }
 }
