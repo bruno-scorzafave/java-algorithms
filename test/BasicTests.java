@@ -14,7 +14,7 @@ public class BasicTests {
     @Test
     public void insertionSort() {
         int[] arr = new int[] {3, 2, 1};
-        InsertionSort.insertionSort(arr, arr.length);
+        InsertionSort.insertionSort(arr);
         int[] expectedResult = new int [] { 1, 2, 3 };
 
         Assertions.assertEquals(Arrays.toString(expectedResult), Arrays.toString(arr));
