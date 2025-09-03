@@ -29,7 +29,7 @@ public class problem1_1 {
         int i = 0;
         while (true) {
             int nextN = i + 1;
-            double nextNlog2n = nextN * Math.log(nextN)/ Math.log(2);
+            long nextNlog2n = (long) (nextN * Math.log(nextN)/ Math.log(2));
             if (nextNlog2n >= limit) {
                 return i;
             }
@@ -39,6 +39,6 @@ public class problem1_1 {
 
     public static void main(String[] args) {
         System.out.println("Largest size n of a factorial that can be solved in 1 century: " + factorial(year));
-        System.out.println("Largest size n of a n*log2(n) that can be solved in 1 second: " + nlog2n(minute));
+        System.out.println("Largest size n of a n*log2(n) that can be solved in 1 second: " + nlog2n(second));
     }
 }
