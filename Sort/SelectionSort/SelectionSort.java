@@ -1,5 +1,7 @@
 package SelectionSort;
 
+import Utils.Utils;
+
 public class SelectionSort {
     public static void selectionSort(int[] arr) {
         for(int i = 0; i < arr.length - 1; i++) {
@@ -11,9 +13,7 @@ public class SelectionSort {
                 }
             }
 
-            int temp = arr[i];
-            arr[i] = arr[menorIndex];
-            arr[menorIndex] = temp;
+            Utils.swap(arr, i, menorIndex);
         }
     }
 }
