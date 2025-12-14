@@ -69,10 +69,11 @@ public class BasicTests {
         int[][] matrix2 = { { 1, 4 }, { 7, 9 } };
         int[][] matrixOfZeros = new int[2][2];
 
+        SquareMatrixAddition.squareMatrixAdditionRecursive(matrix1, matrix2, matrixOfZeros, 0 , 0, 2);
 
         int[][] expectedMatrix = { { 2, 9 }, { 9, 12 } };
 
-        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(SquareMatrixAddition.squareMatrixAdditionRecursive(matrix1, matrix2, matrixOfZeros, 2)));
+        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(matrixOfZeros));
     }
 
     @Test
