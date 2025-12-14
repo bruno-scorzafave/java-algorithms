@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 
 import InsertionSort.InsertionSort;
+import Matrix.SquareMatrixAddition;
 import Matrix.SquareMatrixMultiply;
 import QuickSort.QuickSort;
 import Search.LinearSearch.LinearSearch;
@@ -60,6 +61,18 @@ public class BasicTests {
         int[][] expectedMatrix = { { 39, 73, 31}, { 29, 83, 48}, { 67, 132, 95} };
 
         Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(SquareMatrixMultiply.squareMatrixMultiplyRecursiveGeneralized(matrix1, matrix2, 3)));
+    }
+
+    @Test
+    public void squareMatrixAdditionRecursive(){
+        int[][] matrix1 = { { 1, 5 }, { 2, 3 } };
+        int[][] matrix2 = { { 1, 4 }, { 7, 9 } };
+        int[][] matrixOfZeros = new int[2][2];
+
+
+        int[][] expectedMatrix = { { 2, 9 }, { 9, 12 } };
+
+        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(SquareMatrixAddition.squareMatrixAdditionRecursive(matrix1, matrix2, matrixOfZeros, 2)));
     }
 
     @Test
