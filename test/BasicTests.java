@@ -31,13 +31,35 @@ public class BasicTests {
     @Test
     public void matrixMultiply() {
         int[][] matrix1 = { { 1, 5 }, { 2, 3 } };
-        int[][] matriz2 = { { 1, 4 }, { 7, 9 } };
+        int[][] matrix2 = { { 1, 4 }, { 7, 9 } };
         int[][] matrixOfZeros = new int[2][2];
 
 
         int[][] expectedMatrix = { { 36, 49 }, { 23, 35 } };
 
-        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(SquareMatrixMultiply.squareMatrixMultiply(matrix1, matriz2, matrixOfZeros, 2)));
+        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(SquareMatrixMultiply.squareMatrixMultiply(matrix1, matrix2, matrixOfZeros, 2)));
+    }
+
+    @Test
+    public void matrixMultiplyRecursive() {
+        int[][] matrix1 = { { 1, 5 }, { 2, 3 } };
+        int[][] matrix2 = { { 1, 4 }, { 7, 9 } };
+        int[][] matrixOfZeros = new int[2][2];
+
+
+        int[][] expectedMatrix = { { 36, 49 }, { 23, 35 } };
+
+        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(SquareMatrixMultiply.squareMatrixMultiplyRecursive(matrix1, matrix2, matrixOfZeros, 2)));
+    }
+
+    @Test
+    public void squareMatrixMultiplyRecursiveGeneralized() {
+        int[][] matrix1 = { { 1, 5, 3 }, { 2, 3, 6 }, { 7, 8, 4 } };
+        int[][] matrix2 = { { 1, 4, 9 }, { 7, 9, 2 }, { 1, 8, 4 } };
+
+        int[][] expectedMatrix = { { 39, 73, 31}, { 29, 83, 48}, { 67, 132, 95} };
+
+        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(SquareMatrixMultiply.squareMatrixMultiplyRecursiveGeneralized(matrix1, matrix2, 3)));
     }
 
     @Test
