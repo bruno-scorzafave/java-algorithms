@@ -8,6 +8,7 @@ import java.util.Arrays;
 import InsertionSort.InsertionSort;
 import Matrix.SquareMatrixAddition;
 import Matrix.SquareMatrixMultiply;
+import Matrix.StrassenAlgorithm;
 import QuickSort.QuickSort;
 import Search.LinearSearch.LinearSearch;
 
@@ -67,13 +68,26 @@ public class BasicTests {
     public void squareMatrixAdditionRecursive(){
         int[][] matrix1 = { { 1, 5 }, { 2, 3 } };
         int[][] matrix2 = { { 1, 4 }, { 7, 9 } };
-        int[][] matrixOfZeros = new int[2][2];
+        int[][] resultMatrix = new int[2][2];
 
-        SquareMatrixAddition.squareMatrixAdditionRecursive(matrix1, matrix2, matrixOfZeros, 0 , 0, 2);
+        SquareMatrixAddition.squareMatrixAdditionRecursive(matrix1, matrix2, resultMatrix, 0 , 0, 2);
 
         int[][] expectedMatrix = { { 2, 9 }, { 9, 12 } };
 
-        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(matrixOfZeros));
+        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(resultMatrix));
+    }
+
+    @Test
+    public void strassenAlgorithmRecursive() {
+        int[][] matrix1 = { { 1, 5 }, { 2, 3 } };
+        int[][] matrix2 = { { 1, 4 }, { 7, 9 } };
+        int[][] resultMatrix = new int[2][2];
+
+        StrassenAlgorithm.multiplyAndAdd(matrix1, matrix2, resultMatrix, 2);
+
+        int[][] expectedMatrix = { { 36, 49 }, { 23, 35 } };
+
+        Assertions.assertEquals(Arrays.deepToString(expectedMatrix), Arrays.deepToString(resultMatrix));
     }
 
     @Test
